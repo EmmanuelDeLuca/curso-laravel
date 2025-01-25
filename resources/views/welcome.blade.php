@@ -25,5 +25,16 @@
         @else
             <p>Não tem usuário</p>
         @endif
+
+        <h2>Estrutura for</h2>
+        @for($i = 0; $i < count($arrNumerico); $i++ )
+            <p>{{$arrNumerico[$i]}} - {{$i}}</p>
+            
+        
+        @endfor
+
+        @foreach($arrNomes as $nome)
+            <p>{{$nome}} {{$loop -> index}}</p>
+        @endforeach
     </body>
 </html>
