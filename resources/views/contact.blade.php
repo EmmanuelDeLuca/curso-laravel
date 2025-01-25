@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Testando routes com views</h1>
-    <a href="{{ route('home-index')}}">clique aqui</a>
+    <a href="/">Voltar para home</a>
 
 </body>
 </html>

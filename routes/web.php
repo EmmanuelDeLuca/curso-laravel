@@ -13,10 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
 
+    $nome = "Ivar";
+    $idade = 23;
+
+    return view('welcome', ["nome" => $nome, 'idade' => $idade]);
+});
+
+
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 // Route::view('/jogos', 'jogos');
 
@@ -37,14 +45,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('jogos',['idJogo' =>$id, 'nomeJogo'=>$name]);
 // }) ->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
 
-Route::get('/jogos', function(){
-    return view('jogos');
-});
+// Route::get('/jogos', function(){
+//     return view('jogos');
+// });
 
-Route::get('/home', function () {
-    return view('welcome');
-})->name("home-index");
+// Route::get('/home', function () {
+//     return view('welcome');
+// })->name("home-index");
 
-Route::fallback(function(){
-    return 'Erro ao localizar a rota!';
-});
+// Route::fallback(function(){
+//     return 'Erro ao localizar a rota!';
+// });
