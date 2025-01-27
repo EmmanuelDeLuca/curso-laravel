@@ -28,33 +28,13 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-// Route::view('/jogos', 'jogos');
+Route::get('/produtos', function () {
 
-// Route::get('/jogos', function(){return 'Curso';});
+    $busca = request('search');
 
-// Route::view('/jogos', 'jogos',['name'=>'GTA']);
+    return view('products', ['busca' => $busca]);
+});
 
-// Route::get('/jogos/{name?}', function($name = null){
-//     return view('/jogos', ['nomeJogo' => $name]);
-// }) ->where('name', '[A-Za-z]+');
-
-
-// Route::get('/jogos/{id?}', function($id = null){
-//     return view('/jogos', ['idJogo' => $id]);
-// }) ->where('id', '[0-9]+');
-
-// Route::get('/jogos/{id?}/{name?}', function($id = null, $name = null){
-//     return view('jogos',['idJogo' =>$id, 'nomeJogo'=>$name]);
-// }) ->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
-
-// Route::get('/jogos', function(){
-//     return view('jogos');
-// });
-
-// Route::get('/home', function () {
-//     return view('welcome');
-// })->name("home-index");
-
-// Route::fallback(function(){
-//     return 'Erro ao localizar a rota!';
-// });
+Route::get('/produtos_teste/{id?}', function ($id = null) {
+    return view('produtos', ['id' => $id]);
+});
